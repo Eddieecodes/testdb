@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mysidenav" class="sidenav">
+        <p class="logo"><span>M</span>Moviebook</p>
+        <a href="admin.html" class="icon-a"><im class="fa fa-dashboard icons"></i>
+        &nbsp;&nbsp; DASHBOARD</a>
+        <a href="user.html" class="icon-a"><im class="fa fa-user icons"></i>
+            &nbsp;&nbsp; User</a>
+            <a href="theatre.html" class="icon-a"><im class=" fa fa-Theatre icons"></i>
+                &nbsp;&nbsp; Theatre</a>
+                <a href="price.html" class="icon-a"><im class="fa fa-Price icons"></i>
+                    &nbsp;&nbsp; Price</a>
+                   
+    </div>   
+    <div id="main">
+        <div class="head">
+            <div class="col-div-4">
+                <span  class="nav">
+                    &#9776;Theatre
+                </span> 
+            </div>
+            <div class="col-div-4"> 
+                <div class="profile">
+                    <img src="images/download (2).jpeg" class="pro-img">
+                <p>Henry john<span>Admin</span></p>
+            </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-color: white;
+            overflow: hidden;
+            font-family: system-ui;
+        }
+        .nav{
+            font-size: 30px;
+            cursor: pointer;
+            color: red;
+            display: flex;
+        }
+        .clearfix{
+            clear: both;
+        }
+        .pro-img{
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+        #main{
+            transition: margin-left .5s;
+            padding: 20px;
+            margin-left: 300px;
+        }
+        .head{
+            padding: 15px;
+        }
+        .col-div-4{
+            width: 50%;
+            float: left;
+        }
+        .profile{
+            
+            float: right;
+            width: 160px;
+        }
+        .profile p{
+            color: red;
+            font-weight: 500;
+            margin-left: 55px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .profile p span{
+            font-weight: 400;
+            font-size:12px ;
+            display: block;
+            color: black;
+        }
+        .sidenav{
+            height: 100%;
+            width: 300px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: red;
+            overflow: hidden;
+            transition: 0.5s;
+            padding-top: 30px;
+        }
+        .sidenav a{
+            padding: 15px 8px 15px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover{
+            color:  rgb(77, 5, 5);
+            
+        }
+        .logo{
+            margin:0px ;
+            margin-left:28px ;
+            font-weight: bold;
+            color: white;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .logo span{
+            color: red;
+        }
+    </style>
+</body>
+</html>

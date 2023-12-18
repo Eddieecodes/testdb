@@ -1,0 +1,84 @@
+MariaDB [(none)]> SHOW DATABASE
+    -> exit
+    -> CREATE DATABASE company_b
+    -> clear
+    -> 
+    -> exit
+    -> MariaDB [(none)]>  SHOW DATABASE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DATABASE' at line 1
+MariaDB [(none)]>  SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| edmund             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| record             |
+| records_b          |
+| test               |
++--------------------+
+8 rows in set (0.001 sec)
+
+MariaDB [(none)]> USE records_b;
+Database changed
+MariaDB [records_b]>  CREATE TABLE student(
+    ->     -> student_id INT PRIMARY KEY,
+    ->     -> name VARCHAR(40),
+    ->     -> department VARCHAR(30)
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-> student_id INT PRIMARY KEY,
+    -> name VARCHAR(40),
+    -> department VAR...' at line 2
+MariaDB [records_b]>  CREATE TABLE student(
+    -> student_id INT PRIMARY KEY,
+    ->  name VARCHAR(40),
+    ->  department VARCHAR(30)
+    -> );
+ERROR 1050 (42S01): Table 'student' already exists
+MariaDB [records_b]> SHOW TABLES;
++---------------------+
+| Tables_in_records_b |
++---------------------+
+| student             |
++---------------------+
+1 row in set (0.001 sec)
+
+MariaDB [records_b]> DESCRIBE student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| student_id | int(11)     | NO   | PRI | NULL    |       |
+| name       | varchar(40) | YES  |     | NULL    |       |
+| department | varchar(30) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.005 sec)
+
+MariaDB [records_b]>  INSERT INTO student VALUES (1, 'Edmund Edet', 'Software engineering');
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+MariaDB [records_b]>  INSERT INTO student VALUES (2, 'Ifeanyi chuks', 'Software engineering');
+ERROR 1062 (23000): Duplicate entry '2' for key 'PRIMARY'
+MariaDB [records_b]>  INSERT INTO student VALUES (3, 'Chibuese emi', 'Software engineering');
+ERROR 1062 (23000): Duplicate entry '3' for key 'PRIMARY'
+MariaDB [records_b]> DESCRIBE student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| student_id | int(11)     | NO   | PRI | NULL    |       |
+| name       | varchar(40) | YES  |     | NULL    |       |
+| department | varchar(30) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.005 sec)
+
+MariaDB [records_b]> SELECT * FROM student;
++------------+---------------+----------------------+
+| student_id | name          | department           |
++------------+---------------+----------------------+
+|          1 | Edmund Edet   | Software engineering |
+|          2 | Ifeanyi Chuks | Software engineering |
+|          3 | Chibueze Emi  | Software engineering |
++------------+---------------+----------------------+
+3 rows in set (0.000 sec)
+
+MariaDB [records_b]> 
